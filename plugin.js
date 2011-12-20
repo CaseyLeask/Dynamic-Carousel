@@ -398,7 +398,7 @@
 
 			$el
 				.attr('aria-live', 'polite')
-				.bind('mouseenter click touchstart', function() {
+				.bind('click touchstart', function() {
 					clearInterval(auto);
 				});
 		});
