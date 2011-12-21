@@ -375,11 +375,14 @@
 					switch( active ) {
 						case slidenum: 
 							clearInterval(auto);
-
 							auto = setInterval(function() {
-								autoAdvance();
-								$slider.trigger("nextprev", { dir: 'prev' });	
-							}, speed);
+                $slider.trigger('carouselmove', { moveTo: 0 });
+                clearInterval(auto);
+                auto = setInterval(function() {
+                  autoAdvance();
+                  $slider.trigger("nextprev", { dir: 'next' });	
+                  }, speed);
+              }, 10);
 
 							break;
 						case 1:
